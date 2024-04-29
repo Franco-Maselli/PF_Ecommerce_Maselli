@@ -14,7 +14,7 @@ function App() {
     <Routes>
       <Route path='/' element={<ItemListContainer title='Productos Destacados'/>}/>
       <Route path='/categoria/:categoryId' element={<ItemListContainer title='Productos Destacados'/>}/>
-      <Route path='/producto/:producId' element={<ItemDetailContainer />}/>
+      <Route path='/producto/:productId' element={<ItemDetailContainer />}/>
       <Route path='*' element={<PageNotFound />} />
     </Routes>
   </BrowserRouter>

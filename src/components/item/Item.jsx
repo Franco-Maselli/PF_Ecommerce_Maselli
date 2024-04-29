@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
 
 const Item = ({nombre, img, precio, id}) => {
   return (
@@ -13,7 +12,7 @@ const Item = ({nombre, img, precio, id}) => {
             {nombre}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-black">${precio}</p>
+        <p className="mb-3 font-normal text-white">${precio}</p>
         <Link to={`/producto/${id}`}
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Ver detalles
@@ -32,7 +31,6 @@ const Item = ({nombre, img, precio, id}) => {
             />
           </svg>
         </Link>
-        <ItemCount stock={5} initialValue={1} />
       </div>
     </div>
   );
