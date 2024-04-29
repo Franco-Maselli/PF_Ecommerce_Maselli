@@ -2,6 +2,8 @@ import "./Navbar.css";
 import 'flowbite';
 import { Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
+import ItemListContainer from "../ItemListContainer/ItemListContainer";
+
 
 const NavBar = () => {
   return (
@@ -41,7 +43,7 @@ const NavBar = () => {
         <ul className="text-white flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
               <Link
-                href=""
+                to="/" element={<ItemListContainer title="Productos Destacados" />}
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                 aria-current="page"
               >
