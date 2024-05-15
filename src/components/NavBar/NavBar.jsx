@@ -1,18 +1,20 @@
 import "./Navbar.css";
-import 'flowbite';
-import { Link } from 'react-router-dom';
-import CartWidget from '../CartWidget/CartWidget';
+import "flowbite";
+import { Link } from "react-router-dom";
+import CartWidget from "../CartWidget/CartWidget";
 import ItemListContainer from "../ItemListContainer/ItemListContainer";
-
 
 const NavBar = () => {
   return (
     <nav className="navbar border-gray-200 dark:bg-gray-900 dark:border-gray-700">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <Link
+          href="#"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src="../../src/assets/logo.png" className="h-8" alt="Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">
-          Modern Mobile
+            Modern Mobile
           </span>
         </Link>
         <button
@@ -40,10 +42,11 @@ const NavBar = () => {
           </svg>
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-        <ul className="text-white flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+          <ul className="text-white flex flex-col font-medium p-4 md:p-0 mt-4 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li>
               <Link
-                to="/" element={<ItemListContainer title="Productos Destacados" />}
+                to="/"
+                element={<ItemListContainer title="Productos Destacados" />}
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                 aria-current="page"
               >
@@ -82,13 +85,28 @@ const NavBar = () => {
                   aria-labelledby="dropdownLargeButton"
                 >
                   <li>
-                    <Link to='/categoria/Samsung' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Samsung</Link>
+                    <Link
+                      to="/categoria/Samsung"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Samsung
+                    </Link>
                   </li>
                   <li>
-                    <Link to='/categoria/Motorola' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Motorola</Link>
+                    <Link
+                      to="/categoria/Motorola"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Motorola
+                    </Link>
                   </li>
                   <li>
-                    <Link to='/categoria/Xiaomi' className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Xiaomi</Link>
+                    <Link
+                      to="/categoria/Xiaomi"
+                      className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >
+                      Xiaomi
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -110,9 +128,10 @@ const NavBar = () => {
               </Link>
             </li>
           </ul>
-          
         </div>
-        <CartWidget />
+        <Link to="/cart">
+          <CartWidget />
+        </Link>
       </div>
     </nav>
   );
