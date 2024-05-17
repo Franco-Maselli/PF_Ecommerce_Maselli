@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { getProductById } from '../../data/asyncMock'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import Spinner from '../Spinner/Spinner'
+import { doc, getDoc } from 'firebase/firestore'
+import { db } from '../../config/firebase'
 
 const ItemDetailContainer = () => {
     const [ producto, setProducto ] = useState({})
@@ -11,17 +13,18 @@ const ItemDetailContainer = () => {
     const navigate = useNavigate ()
 
     useEffect (() => {
-        getProductById(productId)
-            .then((prod) => { 
-              if(!prod){
-                navigate('/*')
-              }
-              else{
-                setProducto(prod)}
-              }
-              )
-            .catch((error) => console.log(error))
-            .finally(() => setLoading(false))
+      const getProduct = async() => {
+
+        const queryRef = doc(db, 'productos', productId)
+        const response = await getDoc(queryRef)
+        const newItem = {
+          ...response.data(),
+          id: response.id
+        }
+        setProducto(newItem)
+        setLoading(false)
+      }
+      getProduct()
     }, [productId])
 
   return (

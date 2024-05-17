@@ -6,10 +6,11 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { ContextProvider } from "./context/CartContext";
 import Cart from "./components/cart/Cart";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   return (
-    <div className="bg-[#47a2db]">
+    <div>
       <ContextProvider>
         <BrowserRouter>
           <NavBar />
@@ -27,6 +28,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout/>} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

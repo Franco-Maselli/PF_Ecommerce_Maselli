@@ -3,6 +3,8 @@ import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import ItemList from "../itemList/ItemList";
 import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
+import { db } from "../../config/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = ({title}) => {
   const [ products, setProducts ] = useState([])
@@ -11,12 +13,27 @@ const ItemListContainer = ({title}) => {
 
   useEffect(()=> {
     setLoading(true)
-    const dataProductos = categoryId ? getProductsByCategory(categoryId) : getProducts()
+    const getData = async () =>{
+      const coleccion = collection(db, 'productos')
 
-    dataProductos
-      .then((el) => setProducts(el))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false))
+      const queryRef = !categoryId ?
+      coleccion
+      :
+      query(coleccion, where('categoria', '==', categoryId))
+
+      const response = await getDocs(queryRef)
+
+      const productos = response.docs.map((doc) => {
+        const newItem = {
+          ...doc.data(),
+          id: doc.id
+        }
+        return newItem
+      })
+      setProducts(productos)
+      setLoading(false)
+    }
+    getData()
   },[categoryId])
 
   return (

@@ -79,7 +79,7 @@ if(cart.length === 0){
                 <button onClick={() => clearCart()}>Vaciar Carrito</button>
             </th>
             <th>
-                Finalizar Compra
+              <Link to='/checkout'>Finalizar Compra</Link>
             </th>
         </tfoot>
       </table>
