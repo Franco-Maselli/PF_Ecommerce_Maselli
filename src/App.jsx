@@ -7,6 +7,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound";
 import { ContextProvider } from "./context/CartContext";
 import Cart from "./components/cart/Cart";
 import Checkout from "./components/checkout/Checkout";
+import Contactos from "./pages/Contactos";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             />
             <Route
               path="/categoria/:categoryId"
-              element={<ItemListContainer title="Productos Destacados" />}
+              element={<ItemListContainer />}
             />
             <Route
               path="/producto/:productId"
@@ -30,6 +31,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout/>} />
             <Route path="*" element={<PageNotFound />} />
+            <Route path="/pages/Contactos.jsx" element={<Contactos/>} />
           </Routes>
         </BrowserRouter>
       </ContextProvider>

@@ -37,8 +37,8 @@ const ItemListContainer = ({title}) => {
   },[categoryId])
 
   return (
-    <div className="text-center font-bold">
-      <h4>{title}</h4>
+    <div className="text-center">
+      <h2 className="font-bold text-black text-2xl mt-4">{title}</h2>
       {
         loading ?
         <Spinner />
