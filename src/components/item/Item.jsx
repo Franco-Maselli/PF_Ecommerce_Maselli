@@ -1,23 +1,20 @@
 import { Link } from "react-router-dom";
+import './Item.css'
 
 const Item = ({nombre, img, precio, id}) => {
   return (
-    <div className="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
-        <img className="rounded-t-lg" src={img} alt="" />
-      </a>
-      <div className="p-5">
-        <a href="#">
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <div className="card shadow">
+        <img className="card-img rounded-t-lg" src={img} alt="Imagen del producto" />
+        <div className="card-detail">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight">
             {nombre}
           </h5>
-        </a>
-        <p className="mb-3 font-normal text-white">${precio}</p>
+        <p className="mb-3 font-bold">${precio}</p>
         <Link to={`/producto/${id}`}
-          className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-black bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          className="card-btn inline-flex items-center px-3 py-2 text-sm font-bold text-center text-black rounded-lg  focus:ring-4 focus:outline-none ">
           Ver detalles
           <svg
-            className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            className="rtl:rotate-180 w-3.5 h-3.5 ms-1"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -31,7 +28,7 @@ const Item = ({nombre, img, precio, id}) => {
             />
           </svg>
         </Link>
-      </div>
+        </div>
     </div>
   );
 };

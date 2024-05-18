@@ -6,7 +6,7 @@ import PageNotFound from '../components/PageNotFound/PageNotFound';
 
 const Productos = () => {
   return (
-    <div className="bg-[#47a2db]">
+    <div>
       <BrowserRouter>
         <Routes>
           <Route

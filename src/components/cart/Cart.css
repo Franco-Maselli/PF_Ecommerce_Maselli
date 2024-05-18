@@ -1,0 +1,28 @@
+.table{
+    margin-top: 50px;
+}
+
+.container{
+    background-color: #F6F5FF;
+}
+
+.h2-total{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.btn-v{
+    background-color: #FB2E86;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-f{
+    background-color: #FB2E86;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.btn-f:hover{
+    transform: scale(1.05);
+}

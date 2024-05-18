@@ -1,0 +1,26 @@
+.card{
+    background-color: #F6F7FB;
+    align-items: center;
+    border-radius: 10px;  
+}
+
+.card:hover{
+    transform: scale(1.02);
+}
+
+.card-img{
+    width: 400px;
+    height: 400px;
+}
+
+.card-detail{
+    padding-bottom: 15px;
+}
+
+.card-btn{
+    background-color: #FB2E86;
+}
+
+.card-btn:hover{
+    transform: scale(1.04);
+}
